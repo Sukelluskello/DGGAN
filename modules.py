@@ -6,7 +6,8 @@ from torch.utils.data import Dataset
 class OlympicDataset(Dataset):
 
     def __init__(self, data: pd.DataFrame, transform=None):
-        self.data = torch.from_numpy(data).float()
+        # self.data = torch.from_numpy(data).float()
+        self.data = torch.tensor(data.astype("float32"))
 
     def __len__(self):
         return len(self.data)
